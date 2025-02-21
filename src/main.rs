@@ -1,19 +1,15 @@
 pub mod entity;
+pub mod plugin;
+pub mod resource;
 pub mod system;
 
-use bevy::{app::{App, Startup, Update}, DefaultPlugins};
-use system::{add_persons, first_system, greet_peoples, update_people};
+use bevy::{DefaultPlugins, app::App};
+use plugin::{MyFirstPLugin, ResTestPlugin};
 
 fn main() {
     App::new()
-    .add_plugins(DefaultPlugins)
-    .add_systems(Startup,(
-            add_persons,
-            first_system
-    ))
-    .add_systems(Update,(
-        greet_peoples,
-        update_people
-    ))
-    .run();
+        .add_plugins(DefaultPlugins)
+        .add_plugins(MyFirstPLugin)
+        .add_plugins(ResTestPlugin)
+        .run();
 }
