@@ -1,0 +1,21 @@
+[package]
+name = "game01"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = { version = "0.15.2" }
+
+# dev下优化为1
+[profile.dev]
+opt-level = 1
+
+# dev下的其他包优化3最高
+[profile.dev.package."*"]
+opt-level = 3
+
+#release下将作为一个整体编译
+[profile.release]
+codegen-units = 1
+lto = "thin"
+opt-level = 3
