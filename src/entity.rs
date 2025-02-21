@@ -1,14 +1,13 @@
 use bevy::ecs::component::Component;
 
 #[derive(Component)]
-struct Person;
+pub struct Person;
 
 #[derive(Component)]
-struct Name(String);
-
+pub struct Name(pub String);
 
 #[derive(Component)]
-struct Position {
-    x: f32,
-    y: f32,
+pub struct Position {
+    pub x: i32,
+    pub y: i32,
 }
