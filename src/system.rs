@@ -1,8 +1,8 @@
 use bevy::{
-    asset::{AssetServer, Assets, Handle}, core_pipeline::core_2d::Camera2d, ecs::{
+    asset::{AssetServer, Assets}, core_pipeline::core_2d::Camera2d, ecs::{
         query::With,
         system::{Commands, Query, Res, ResMut},
-    }, image::Image, input::{keyboard::KeyCode, ButtonInput}, math::{primitives::Circle, Quat, Vec3}, reflect::Reflect, render::mesh::{Mesh, Mesh2d}, sprite::{ColorMaterial, MeshMaterial2d}, time::Time, transform::components::Transform, utils::default, window::{PrimaryWindow, Window}
+    }, input::{keyboard::KeyCode, ButtonInput}, math::{primitives::Circle, Quat, Vec3}, render::mesh::{Mesh, Mesh2d}, sprite::{ColorMaterial, MeshMaterial2d}, time::Time, transform::components::Transform, utils::default, window::{PrimaryWindow, Window}
 };
 
 use crate::{
