@@ -4,10 +4,14 @@ use bevy::ecs::component::Component;
 #[derive(Component)]
 pub struct MajorCamera;
 
-//王将
+//玩家
 #[derive(Component)]
 pub struct User;
 
 //生命值
 #[derive(Component)]
 pub struct Life(pub f64);
+
+//子弹
+#[derive(Component)]
+pub struct Bullet;

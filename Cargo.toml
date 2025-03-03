@@ -7,6 +7,7 @@ edition = "2024"
 bevy = { version = "0.15.2", features = ["dynamic_linking","wayland","bevy_image","mp3","jpeg","bevy_render"] }
 bevy-inspector-egui = "0.29.1"
 
+
 # dev下优化为1
 [profile.dev]
 opt-level = 1

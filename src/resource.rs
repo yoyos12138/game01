@@ -1,4 +1,4 @@
-use bevy::{ecs::system::Resource, time::Timer};
+use bevy::{ecs::system::Resource, math::Vec3, time::Timer};
 //资源是全局唯一的单例数据，用于在系统之间共享信息。
 
 //自定义触发器
@@ -16,3 +16,7 @@ pub struct UserRadius(pub f32);
 //玩家速度
 #[derive(Resource, Default)]
 pub struct UserSpeed(pub f32);
+
+//鼠标位置
+#[derive(Resource)]
+pub struct CursorPosition(pub Vec3);
