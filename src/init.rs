@@ -17,7 +17,9 @@ pub mod systems {
 
     use super::components::MajorCamera;
     //关闭窗口的缩小全屏,设置窗口标题
-    pub fn lock_window_size(mut main_window: Query<&mut Window, With<PrimaryWindow>>) {
+    pub fn lock_window_size(
+        mut main_window: Query<&mut Window, With<PrimaryWindow>>
+    ) {
         if let Ok(mut m_win) = main_window.get_single_mut() {
             m_win.title = "test".to_string();
             m_win.resizable = false;
