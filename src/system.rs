@@ -25,7 +25,7 @@ use crate::{
 //初始化窗口
 pub fn init_window(mut window_query: Query<&mut Window, With<PrimaryWindow>>) {
     let mut win0 = window_query.get_single_mut().unwrap();
-    win0.title = "玉将大冒险".to_string();
+    win0.title = "玉将".to_string();
     win0.enabled_buttons.maximize = false;
     win0.resizable = false;
 }
@@ -309,15 +309,19 @@ pub fn spawn_bullet(
         let cy = mouse.0.y;
         println!("鼠标位置({},{})", cx, cy);
         
-        
+        let zdwz=Transform::from_translation(user0.translation)
+            .looking_at(
+                mouse.0,
+                Vec3::Z
+            );
+         //让子弹朝向鼠标的
+        println!("{:?}",zdwz);
 
         commands.spawn((
             Bullet,
             Mesh2d(meshes.add(Ellipse::new(_r/5.0, _r*2.0))),
             MeshMaterial2d(materials.add(ColorMaterial::from(Color::srgb(1.0, 1.0, 1.0)))),
-            Transform::from_translation(user0.translation)
-                .looking_at( Vec3::new(cx, cy, 0.0), Vec3::Y)
-            //让子弹朝向鼠标的方向
+            zdwz
         ));
     }
 }
